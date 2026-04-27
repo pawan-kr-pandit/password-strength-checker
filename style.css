@@ -1,0 +1,185 @@
+:root {
+  --bg: #0b1220;
+  --panel: #111827;
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+  --line: rgba(255, 255, 255, 0.12);
+  --primary: #2563eb;
+  --weak: #ef4444;
+  --medium: #f59e0b;
+  --strong: #22c55e;
+}
+
+body.light {
+  --bg: #eff6ff;
+  --panel: #ffffff;
+  --text: #0f172a;
+  --muted: #475569;
+  --line: rgba(15, 23, 42, 0.15);
+  --primary: #1d4ed8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  position: relative;
+  overflow: hidden;
+}
+
+body::before,
+body::after {
+  content: "";
+  position: absolute;
+  width: 42vmax;
+  height: 42vmax;
+  border-radius: 50%;
+  filter: blur(65px);
+  opacity: 0.36;
+  pointer-events: none;
+  z-index: 0;
+}
+
+body::before {
+  background: radial-gradient(circle, #3b82f6 0%, #7c3aed 60%, transparent 100%);
+  top: -12vmax;
+  left: -10vmax;
+  animation: floatOrbOne 16s ease-in-out infinite alternate;
+}
+
+body::after {
+  background: radial-gradient(circle, #06b6d4 0%, #2563eb 60%, transparent 100%);
+  right: -12vmax;
+  bottom: -14vmax;
+  animation: floatOrbTwo 18s ease-in-out infinite alternate;
+}
+
+.container {
+  width: min(95vw, 520px);
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 22px;
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 1;
+}
+
+.top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 1.35rem;
+}
+
+.subtitle {
+  margin: 8px 0 16px;
+  color: var(--muted);
+}
+
+label {
+  display: block;
+  margin-bottom: 7px;
+  font-size: 0.92rem;
+}
+
+.input-wrap {
+  display: flex;
+  gap: 8px;
+}
+
+input {
+  flex: 1;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--text);
+}
+
+button {
+  border: none;
+  background: var(--primary);
+  color: #fff;
+  border-radius: 10px;
+  padding: 0 12px;
+  cursor: pointer;
+}
+
+.theme-btn {
+  min-height: 36px;
+}
+
+.meter {
+  margin-top: 14px;
+  width: 100%;
+  height: 11px;
+  border-radius: 999px;
+  overflow: hidden;
+  background: rgba(100, 116, 139, 0.2);
+}
+
+.strength-bar {
+  height: 100%;
+  width: 0;
+  transition: width 180ms ease, background-color 180ms ease;
+}
+
+.strength-text,
+.score-text {
+  margin: 10px 0 4px;
+  font-weight: 700;
+}
+
+h3 {
+  margin: 16px 0 8px;
+  font-size: 1rem;
+}
+
+.rules,
+.suggestions {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--muted);
+}
+
+.rules li,
+.suggestions li {
+  margin: 6px 0;
+}
+
+.rules .pass {
+  color: var(--strong);
+}
+
+@keyframes floatOrbOne {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  100% {
+    transform: translate(10vmax, 7vmax) scale(1.12);
+  }
+}
+
+@keyframes floatOrbTwo {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  100% {
+    transform: translate(-9vmax, -6vmax) scale(1.1);
+  }
+}

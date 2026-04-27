@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Password Strength Checker</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <div class="top-row">
+        <h1>Password Strength Checker</h1>
+        <button id="themeBtn" type="button" class="theme-btn">Light Mode</button>
+      </div>
+
+      <p class="subtitle">
+        Live strength meter with rules, suggestions, score, and utilities.
+      </p>
+
+      <label for="password">Enter Password</label>
+      <div class="input-wrap">
+        <input
+          id="password"
+          type="password"
+          placeholder="Type your password..."
+          autocomplete="off"
+        />
+        <button id="toggleBtn" type="button">Show</button>
+        <button id="copyBtn" type="button">Copy</button>
+      </div>
+
+      <div class="meter">
+        <div id="strengthBar" class="strength-bar"></div>
+      </div>
+      <p id="strengthText" class="strength-text">Strength: --</p>
+      <p id="scoreText" class="score-text">Score: 0%</p>
+
+      <h3>Requirements</h3>
+      <ul id="rulesList" class="rules">
+        <li id="ruleLength">At least 8 characters</li>
+        <li id="ruleUpper">At least 1 uppercase letter</li>
+        <li id="ruleLower">At least 1 lowercase letter</li>
+        <li id="ruleNumber">At least 1 number</li>
+        <li id="ruleSpecial">At least 1 special character (!@#$...)</li>
+      </ul>
+
+      <h3>Suggestions</h3>
+      <ul id="suggestions" class="suggestions">
+        <li>Start typing a password to see suggestions.</li>
+      </ul>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

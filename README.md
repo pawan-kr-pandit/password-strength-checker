@@ -97,13 +97,13 @@ password-strength-checker-v2/
 ### 1) Clone the repository
 
 ```bash
-git clone https://github.com/pawan-kr-pandit/password-strength-checker-v2.git
+git clone https://github.com/pawan-kr-pandit/password-strength-checker.git
 ```
 
 ### 2) Open the project directory
 
 ```bash
-cd password-strength-checker-v2
+cd password-strength-checker
 ```
 
 ### 3) Run the project

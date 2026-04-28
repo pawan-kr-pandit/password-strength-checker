@@ -83,7 +83,7 @@ Each valid condition increases the overall score. Based on score percentage, the
 ## Project Structure
 
 ```text
-password-strength-checker-v2/
+password-strength-checker/
 ├── index.html      # Main UI markup
 ├── style.css       # Styling, themes, responsive design, background animation
 ├── script.js       # Validation logic, score calculation, interactions
